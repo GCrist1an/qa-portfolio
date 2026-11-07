@@ -22,9 +22,9 @@ API pública de práctica para QA: https://restful-booker.herokuapp.com ([docume
    ```
 
 ## Enfoque
-Las aserciones verifican el **comportamiento REST esperado** (por ejemplo, 400 ante datos inválidos o 401 ante credenciales incorrectas). Cuando la API responde distinto, la prueba falla a propósito y el hallazgo se documenta en [`bugs/`](bugs/README.md).
+Las aserciones verifican el **comportamiento esperado** (por ejemplo, 400 ante datos inválidos). Cuando la API responde distinto, la prueba falla a propósito y el defecto se documenta en [`bugs/`](bugs/README.md). Si la API hace lo que dice su documentación pero no sigue las convenciones REST (por ejemplo, 200 ante credenciales incorrectas), la aserción valida lo documentado y la recomendación se registra como **observación de diseño** (OBS).
 
 ## Resultados de ejecución
 | Fecha | Total | ✅ Pasaron | ❌ Fallaron | Evidencia |
 |---|---|---|---|---|
-| _por ejecutar_ | | | | |
+| 2026-11-07 | 24 aserciones (15 peticiones) | 21 | 3 ([RB-001](bugs/RB-001.md), [RB-002](bugs/RB-002.md), [RB-003](bugs/RB-003.md)) | [`RESUMEN.md`](../evidencias/RESUMEN.md) · [`newman-resultado.xml`](../evidencias/newman-resultado.xml) |

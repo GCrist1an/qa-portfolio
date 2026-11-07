@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Restful-Booker — QA Portfolio (Cristian Gutiérrez)" tests="15" time="2.301">
+  <testsuite name="01 Salud / API-001 Ping" id="708cbbca-b496-41a0-8b39-391a0d101910" timestamp="2026-11-07T16:37:45.607Z" tests="2" failures="0" errors="0" time="0.570">
+    <testcase name="API-001 Responde 201 Created (según documentación)" time="0.570" classname="01SaludApi001Ping"/>
+    <testcase name="Responde en menos de 2 s" time="0.570" classname="01SaludApi001Ping"/>
+  </testsuite>
+  <testsuite name="02 Autenticación / API-002 Crear token (credenciales válidas)" id="5db7009e-791b-4be9-bcd3-2c1f1708e7b5" timestamp="2026-11-07T16:37:45.607Z" tests="2" failures="0" errors="0" time="0.164">
+    <testcase name="Status 200" time="0.164" classname="02AutenticacionApi002CrearTokenCredencialesValidas"/>
+    <testcase name="Devuelve un token" time="0.164" classname="02AutenticacionApi002CrearTokenCredencialesValidas"/>
+  </testsuite>
+  <testsuite name="02 Autenticación / API-003 Crear token (credenciales inválidas)" id="4c520000-f190-4e00-b1f9-c437e84cfba0" timestamp="2026-11-07T16:37:45.607Z" tests="2" failures="0" errors="0" time="0.144">
+    <testcase name="API-003 Responde 200 con reason &quot;Bad credentials&quot; (según documentación, ver OBS-001)" time="0.144" classname="02AutenticacionApi003CrearTokenCredencialesInvalidas"/>
+    <testcase name="No devuelve token" time="0.144" classname="02AutenticacionApi003CrearTokenCredencialesInvalidas"/>
+  </testsuite>
+  <testsuite name="03 CRUD de reservas / API-004 Listar reservas" id="87305c30-34a9-45b8-b3ee-be5c45f66c76" timestamp="2026-11-07T16:37:45.607Z" tests="2" failures="0" errors="0" time="0.289">
+    <testcase name="Status 200" time="0.289" classname="03CrudDeReservasApi004ListarReservas"/>
+    <testcase name="Devuelve un arreglo de IDs" time="0.289" classname="03CrudDeReservasApi004ListarReservas"/>
+  </testsuite>
+  <testsuite name="03 CRUD de reservas / API-005 Crear reserva" id="564e7f07-39fa-4976-aa77-e2af673fde9c" timestamp="2026-11-07T16:37:45.607Z" tests="3" failures="0" errors="0" time="0.094">
+    <testcase name="Status 200" time="0.094" classname="03CrudDeReservasApi005CrearReserva"/>
+    <testcase name="Devuelve bookingid" time="0.094" classname="03CrudDeReservasApi005CrearReserva"/>
+    <testcase name="Guarda los datos enviados" time="0.094" classname="03CrudDeReservasApi005CrearReserva"/>
+  </testsuite>
+  <testsuite name="03 CRUD de reservas / API-006 Consultar reserva creada" id="8a6c8cb1-86ae-4fb8-89b1-aa0cf1657e7e" timestamp="2026-11-07T16:37:45.607Z" tests="2" failures="0" errors="0" time="0.097">
+    <testcase name="Status 200" time="0.097" classname="03CrudDeReservasApi006ConsultarReservaCreada"/>
+    <testcase name="Esquema con campos requeridos" time="0.097" classname="03CrudDeReservasApi006ConsultarReservaCreada"/>
+  </testsuite>
+  <testsuite name="03 CRUD de reservas / API-007 Actualizar reserva completa (PUT)" id="104765ab-1992-4832-b634-8e94366b57f4" timestamp="2026-11-07T16:37:45.607Z" tests="2" failures="0" errors="0" time="0.126">
+    <testcase name="Status 200" time="0.126" classname="03CrudDeReservasApi007ActualizarReservaCompletaPut"/>
+    <testcase name="Aplica el cambio" time="0.126" classname="03CrudDeReservasApi007ActualizarReservaCompletaPut"/>
+  </testsuite>
+  <testsuite name="03 CRUD de reservas / API-008 Actualizar parcial (PATCH)" id="30752bf7-f5f0-4eef-a001-f74e89f7d2f6" timestamp="2026-11-07T16:37:45.607Z" tests="2" failures="0" errors="0" time="0.087">
+    <testcase name="Status 200" time="0.087" classname="03CrudDeReservasApi008ActualizarParcialPatch"/>
+    <testcase name="Cambia solo additionalneeds" time="0.087" classname="03CrudDeReservasApi008ActualizarParcialPatch"/>
+  </testsuite>
+  <testsuite name="03 CRUD de reservas / API-009 Actualizar sin token" id="70df1479-dfb6-4dbf-b068-576f0e3a9c01" timestamp="2026-11-07T16:37:45.607Z" tests="1" failures="0" errors="0" time="0.134">
+    <testcase name="Responde 403 Forbidden" time="0.134" classname="03CrudDeReservasApi009ActualizarSinToken"/>
+  </testsuite>
+  <testsuite name="03 CRUD de reservas / API-010 Eliminar reserva" id="560ac9fb-809d-4091-9fab-d10d4a1a1e57" timestamp="2026-11-07T16:37:45.607Z" tests="1" failures="0" errors="0" time="0.085">
+    <testcase name="API-010 Responde 201 Created (según documentación, ver OBS-002)" time="0.085" classname="03CrudDeReservasApi010EliminarReserva"/>
+  </testsuite>
+  <testsuite name="03 CRUD de reservas / API-011 Consultar reserva eliminada" id="e2ea9b28-f8f8-478a-8f2c-b71154cefbaa" timestamp="2026-11-07T16:37:45.607Z" tests="1" failures="0" errors="0" time="0.089">
+    <testcase name="Responde 404 Not Found" time="0.089" classname="03CrudDeReservasApi011ConsultarReservaEliminada"/>
+  </testsuite>
+  <testsuite name="04 Casos negativos y validación / API-012 Crear reserva sin campos requeridos" id="6045392e-4501-45d2-9fec-bfe14229e43b" timestamp="2026-11-07T16:37:45.607Z" tests="1" failures="1" errors="0" time="0.086">
+    <testcase name="API-012 Responde 400 Bad Request" time="0.086" classname="04CasosNegativosYValidacionApi012CrearReservaSinCamposRequeridos">
+      <failure type="AssertionFailure" message="expected response to have status code 400 but got 500">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: f6dca449-3f4c-4325-97d5-bcc88a2443ce.]]>
+        <![CDATA[Collection name: Restful-Booker — QA Portfolio (Cristian Gutiérrez).]]>
+        <![CDATA[Request name: 04 Casos negativos y validación / API-012 Crear reserva sin campos requeridos.]]>
+        <![CDATA[Test description: API-012 Responde 400 Bad Request.]]>
+        <![CDATA[Error message: expected response to have status code 400 but got 500.]]>
+        <![CDATA[Stacktrace: AssertionError: expected response to have status code 400 but got 500
+   at Object.eval sandbox-script.js:1:12).]]>
+      </failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="04 Casos negativos y validación / API-013 Fechas invertidas (checkout antes de checkin)" id="6dac66d1-83c5-4bf9-b528-7edfda11b116" timestamp="2026-11-07T16:37:45.607Z" tests="1" failures="1" errors="0" time="0.127">
+    <testcase name="API-013 Rechaza fechas inválidas con 400" time="0.127" classname="04CasosNegativosYValidacionApi013FechasInvertidasCheckoutAntesDeCheckin">
+      <failure type="AssertionFailure" message="expected response to have status code 400 but got 200">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: f6dca449-3f4c-4325-97d5-bcc88a2443ce.]]>
+        <![CDATA[Collection name: Restful-Booker — QA Portfolio (Cristian Gutiérrez).]]>
+        <![CDATA[Request name: 04 Casos negativos y validación / API-013 Fechas invertidas (checkout antes de checkin).]]>
+        <![CDATA[Test description: API-013 Rechaza fechas inválidas con 400.]]>
+        <![CDATA[Error message: expected response to have status code 400 but got 200.]]>
+        <![CDATA[Stacktrace: AssertionError: expected response to have status code 400 but got 200
+   at Object.eval sandbox-script.js:1:13).]]>
+      </failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="04 Casos negativos y validación / API-014 Precio negativo" id="401d020b-32ef-4f67-8f64-233dd6c42342" timestamp="2026-11-07T16:37:45.607Z" tests="1" failures="1" errors="0" time="0.098">
+    <testcase name="API-014 Rechaza precio negativo con 400" time="0.098" classname="04CasosNegativosYValidacionApi014PrecioNegativo">
+      <failure type="AssertionFailure" message="expected response to have status code 400 but got 200">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: f6dca449-3f4c-4325-97d5-bcc88a2443ce.]]>
+        <![CDATA[Collection name: Restful-Booker — QA Portfolio (Cristian Gutiérrez).]]>
+        <![CDATA[Request name: 04 Casos negativos y validación / API-014 Precio negativo.]]>
+        <![CDATA[Test description: API-014 Rechaza precio negativo con 400.]]>
+        <![CDATA[Error message: expected response to have status code 400 but got 200.]]>
+        <![CDATA[Stacktrace: AssertionError: expected response to have status code 400 but got 200
+   at Object.eval sandbox-script.js:1:14).]]>
+      </failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="04 Casos negativos y validación / API-015 Consultar ID inexistente" id="f3d6a168-b70e-4dca-ad00-e13ba7c41f35" timestamp="2026-11-07T16:37:45.607Z" tests="1" failures="0" errors="0" time="0.111">
+    <testcase name="Responde 404" time="0.111" classname="04CasosNegativosYValidacionApi015ConsultarIdInexistente"/>
+  </testsuite>
+</testsuites>

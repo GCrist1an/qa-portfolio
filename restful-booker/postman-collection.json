@@ -38,7 +38,7 @@
               "script": {
                 "type": "text/javascript",
                 "exec": [
-                  "pm.test('API-001 Responde 200 OK', () => pm.response.to.have.status(200));",
+                  "pm.test('API-001 Responde 201 Created (según documentación)', () => pm.response.to.have.status(201));",
                   "pm.test('Responde en menos de 2 s', () => pm.expect(pm.response.responseTime).to.be.below(2000));"
                 ]
               }
@@ -128,7 +128,7 @@
               "script": {
                 "type": "text/javascript",
                 "exec": [
-                  "pm.test('API-003 Responde 401 Unauthorized', () => pm.response.to.have.status(401));",
+                  "pm.test('API-003 Responde 200 con reason \"Bad credentials\" (según documentación, ver OBS-001)', () => { pm.response.to.have.status(200); pm.expect(pm.response.json().reason).to.eql('Bad credentials'); });",
                   "pm.test('No devuelve token', () => pm.expect(pm.response.json().token).to.be.undefined);"
                 ]
               }
@@ -451,7 +451,7 @@
               "script": {
                 "type": "text/javascript",
                 "exec": [
-                  "pm.test('API-010 Responde 200 o 204', () => pm.expect(pm.response.code).to.be.oneOf([200, 204]));"
+                  "pm.test('API-010 Responde 201 Created (según documentación, ver OBS-002)', () => pm.response.to.have.status(201));"
                 ]
               }
             }
